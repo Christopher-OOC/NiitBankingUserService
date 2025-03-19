@@ -24,7 +24,7 @@ public class CustomerService {
 
     public Customer createCustomer(Customer customer) {
         Customer saved = customerRepository.save(customer);
-        String url = "http://localhost:9000/NIITBANKINGAPIACCOUNTMANAGEMENT/accounts/" + saved.getId();
+        String url = "http://NIITBANKINGAPIACCOUNTMANAGEMENT/accounts/" + saved.getId();
 
         ResponseEntity<Account> accountResponseEntity = restTemplate.postForEntity(url, null, Account.class);
 
